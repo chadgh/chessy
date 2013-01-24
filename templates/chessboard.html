@@ -1,0 +1,50 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Chessboard</title>
+	<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" charset="utf-8">
+</head>
+<body>
+	{% if error != '' %}
+	<div id="error">
+		{{ error }}
+	</div>
+	{% endif %}
+
+	<div id="info">
+		{{ game.turn }}'s turn
+	</div>
+
+	{% if message != '' %}
+	<div id="message">
+		{{ message }}
+	</div>
+	{% endif %}
+
+	<table border="0" cellspacing="0" cellpadding="0">
+		{% set color = 'light' %}
+		{% set rank = 8 %}
+		{% for row in game.graphical_board %}
+		<tr>
+			<th>{{ rank }}</th>
+			{% for cell, team in row %}
+				<td class='{{ color }} {{ team }}'>{{ cell }}</td>
+				{% set color = 'light' if color == 'dark' else 'dark' %}
+			{% endfor %}
+			{% set rank = rank - 1 %}
+			{% set color = 'light' if color == 'dark' else 'dark' %}
+		</tr>
+		{% endfor %}
+		<tr><th></th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th><th>g</th><th>h</th></tr>
+	</table>
+	<div id="fenform">
+		<form action="{{ url_for('rewrite_fen') }}" method="post" accept-charset="utf-8">
+			<label for="fen">FEN: </label><input type="text" name="fen" value="{{ game.fen_str }}" id="fen">
+			<input type="submit" value="Display board">
+		</form>
+	</div>
+	<footer>
+		<p><a href="{{ url_for('home') }}">Puzzles</a></p>
+	</footer>
+</body>
+</html>

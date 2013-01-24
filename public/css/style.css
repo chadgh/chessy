@@ -1,0 +1,33 @@
+@font-face { font-family: 'Chess'; src: local('Chess'), url('/css/chess_merida_unicode.ttf') format('truetype'); }
+
+body { width: 90%; max-width: 800px; margin: 30px auto; }
+
+table, #content { margin: 0px auto; }
+
+header, footer { text-align: center; }
+
+#fenform { text-align: center; }
+
+#error { text-align: center; background: #e9bebe; padding: 1em 0 1em 0; font-weight: bold; font-size: 1.5em; margin-bottom: 1em; }
+
+#message { text-align: center; background: #e9ecda; padding: .75em 0; font-size: 1.5em; margin-bottom: 1em; border-radius: 5px; font-family: Helvetica, Arial, sans-serif; }
+
+#info { text-align: center; font-family: Helvetica; font-size: 1.5em; padding-bottom: .7em; font-weight: bold; }
+
+.dark { background-color: #628a62; }
+
+table td, table th { font-family: 'Chess', Times, serif; font-size: 3em; border: solid 1px #000; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+
+table th { color: #bbb; font-family: Helvetica; font-size: 1.3em; padding: 5px; }
+
+table td { width: 1.5em; height: 1.5em; text-align: center; vertical-align: middle; line-height: 1em; }
+
+td.w { color: #fff; text-shadow: 0 0 5px #000; }
+td.b { text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); }
+
+table th { background: #eee; border: solid 1px #eee; color: #ccc; }
+
+table { border-top: solid 1.5em #eee; border-right: solid 1.5em #eee; }
+
+#fenform { font-family: Helvetica, Arial, sans-serif; font-size: 12px; color: #bbb; font-weight: bold; margin-top: 1em; }
+#fenform #fen { width: 400px; }
